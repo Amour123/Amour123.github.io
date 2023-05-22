@@ -1,8 +1,3 @@
-//<script>
-// window.location.href="https://www.douyu.com/8035790"
-//window.location.href="https://blog.csdn.net/qq_38186465"
-//</script>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Amour恋空-</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
     <script>
         //返回当前 URL 的查询部分（问号 ? 之后的部分）。
         var urlParameters = location.search;
         //声明并初始化接收请求参数的对象
         var requestParameters = new Object();
-        (function () {
+        (function() {
             //如果该求青中有请求的参数，则获取请求的参数，否则打印提示此请求没有请求的参数
             if (urlParameters.indexOf('?') != -1) {
                 //获取请求参数的字符串
@@ -28,27 +31,31 @@
                     requestParameters[parameterArray[i].split('=')[0]] = (parameterArray[i].split('=')[1]);
                 }
                 console.info('theRequest is =====', requestParameters);
-            }
-            else {
+            } else {
                 console.info('There is no request parameters');
             }
             return requestParameters;
         })();
-
-        if(requestParameters.name != 'amour123'){
-        window.location.href="https://blog.csdn.net/qq_38186465"
-        }else{
-         window.location.href="https://amour123.gitee.io" 
-          
-        }
-         
-
-
     </script>
 </head>
 
 <body>
-
+    <iframe id="by" src="" frameborder="0" width="100%" height="99%"></iframe>
 </body>
+<script>
+    var by = document.getElementById("by");
+    if (requestParameters.name == 'amour123') {
+        //window.location.href = "https://amour123.gitee.io"
+        document.title = "Amour恋空-gitee"
+        by.src = "https://amour123.gitee.io";
+    } else if (requestParameters.name == 'gpt') {
+        document.title = "Amour恋空-GPT"
+        by.src = "http://43.156.17.173:1002/#/chat/1684722537147";
+    } else {
+        //window.location.href = "https://blog.csdn.net/qq_38186465"
+        document.title = "Amour恋空-blog"
+        by.src = "https://blog.csdn.net/qq_38186465";
+    }
+</script>
 
 </html>
